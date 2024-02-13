@@ -1,26 +1,23 @@
-# PKGBUILD
-
 pkgname=internet-monitor
-pkgver=0.1
+pkgver=1.0
 pkgrel=1
-pkgdesc="Daemon that monitors internet connectivity and notifies the user"
-arch=('any')
-url="https://example.com"
+pkgdesc="A simple internet connectivity monitor with systemd integration"
+arch=('x86_64')
+url="http://example.com/project-url"
 license=('GPL')
-depends=('python' 'dbus-python')
+depends=('glibc')
+makedepends=('gcc')
+source=('internet-monitor.c'
+        'internet-monitor.service')
+sha256sums=('SKIP'  # Replace with actual SHA256 sum of internet-monitor.c
+            'SKIP') # Replace with actual SHA256 sum of internet-monitor.service
 
-package() {
-    # Install systemd service
-    install -Dm644 internet-monitor.service "${pkgdir}/usr/lib/systemd/user/internet-monitor.service"
-
-    # Install Python script
-    install -Dm755 internet-monitor.py "${pkgdir}/usr/bin/internet-monitor.py"
-
-    # Set permissions and ownership
-    chmod 644 "${pkgdir}/usr/lib/systemd/user/internet-monitor.service"
-    chmod 755 "${pkgdir}/usr/bin/internet-monitor.py"
+build() {
+  gcc "$srcdir/internet-monitor.c" -o internet-monitor
 }
 
-# Add md5sums if needed
-#md5sums=('...')
+package() {
+  install -Dm755 "$srcdir/internet-monitor" "$pkgdir/usr/bin/internet-monitor"
+  install -Dm644 "$srcdir/internet-monitor.service" "$pkgdir/usr/lib/systemd/user/internet-monitor.service"
+}
 

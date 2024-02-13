@@ -1,0 +1,10 @@
+[Unit]
+Description=Internet Connectivity Monitor
+
+[Service]
+ExecStart=/usr/bin/internet-monitor
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
