@@ -9,8 +9,8 @@ depends=('glibc')
 makedepends=('gcc')
 source=('internet-monitor.c'
         'internet-monitor.service')
-sha256sums=('SKIP'  # Replace with actual SHA256 sum of internet-monitor.c
-            'SKIP') # Replace with actual SHA256 sum of internet-monitor.service
+sha256sums=('SKIP' 
+            'SKIP')
 
 build() {
   gcc "$srcdir/internet-monitor.c" -o internet-monitor

@@ -3,11 +3,16 @@ A simple systemd service written in C that checks every 5 seconds for internet
 connectivity and sends a dbus notification to an active GNOME or KDE desktop
 when the internet is unreachable. The initial source was written by ChatGPT 3.5
 in python and then modified by me until I got exactly what I wanted. Rewritten
-in C to use less resources. Try it out, it works well.
+in C to use less resources. Try it out, it's extremely lightweight, responsive,
+and works well. Uses under 1.3M of ram on my machine. This program is very
+sensitive to changes in your connectivitym so if 5 seconds it too
+frequent, modify internet-monitor.c in a text editor and change the 5
+to whatever you want and build.
 
 ### What it does
-It pings google.com and when it can't, it generates a desktop notification in
-a GNOME or KDE session. I've tested this on Arch Linux with GNOME 45.
+It pings google.com every 5 seconds and when it can't, it generates a 
+desktop notification in a GNOME or KDE session. I've tested this on 
+Arch Linux with GNOME 45.
 
 ### Build package, install and start the service
 #### For Arch Linux
