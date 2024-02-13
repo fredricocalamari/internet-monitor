@@ -1,6 +1,6 @@
 # Freedesktop Internet Monitor
 
-The Freedesktop Internet Monitor is an efficient systemd service, meticulously crafted in C, designed to monitor internet connectivity. By pinging google.com at 5-second intervals, it promptly alerts users of any connectivity issues with a dbus notification, seamlessly integrating with both GNOME and KDE desktop environments. Originally conceived in Python by ChatGPT 3.5, this tool has been refined and rewritten in C to enhance performance and minimize resource consumption, boasting an impressively low memory footprint of under 1.3M. Tailored for responsiveness and sensitivity to connectivity changes, users can easily customize the ping interval to suit their preferences.
+The Freedesktop Internet Monitor is an efficient systemd service, meticulously crafted in C, designed to monitor internet connectivity. By pinging google.com at 5-second intervals, it promptly alerts users of any connectivity issues with a dbus notification, seamlessly integrating with both GNOME and KDE desktop environments. Originally conceived in Python by ChatGPT 3.5, this tool has been refined and rewritten in C to enhance performance and minimize resource consumption, boasting an impressively low memory footprint of under 1.3M. Tailored for responsiveness and sensitivity to connectivity changes, users can optionally customize the ping interval by modifying the sleep timer in internet-monitor.c to suit their preferences.
 
 ## Features
 
@@ -71,4 +71,4 @@ systemctl --user enable internet-monitor.service && systemctl --user start inter
 
 To modify the ping interval, simply edit the `internet-monitor.c` file, changing the sleep duration to your preferred interval, and recompile the program. This flexibility allows the monitor to be adapted to various user requirements and network conditions.
 
-This text can be directly copied into the GitHub README.md editor or any markdown file.
+Written with the help of ChatGPT4
