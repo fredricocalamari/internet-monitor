@@ -1,14 +1,12 @@
 # Freedesktop Internet Monitor
 
-The Freedesktop Internet Monitor is an efficient systemd service, meticulously crafted in C, designed to monitor internet connectivity. By pinging google.com at 5-second intervals, it promptly alerts users of any connectivity issues with a dbus notification, seamlessly integrating with both GNOME and KDE desktop environments. Originally conceived in Python by ChatGPT 3.5, this tool has been refined and rewritten in C to enhance performance and minimize resource consumption, boasting an impressively low memory footprint of under 1.3M. Tailored for responsiveness and sensitivity to connectivity changes, users can optionally customize the ping interval by modifying the sleep timer in internet-monitor.c to suit their preferences.
-
+The Freedesktop Internet Monitor is a simple and efficient systemd service written in C, designed to monitor internet connectivity. It pings google.com at 5-second intervals, and after 3 failed attempts it alerts users of any connectivity issues with a desktop notification. Originally conceived in Python by ChatGPT 3.5 this tool has been refined and rewritten in C by ChatGPT 4 to minimize resource consumption. It uses under 1.4MB of memory running on my computer. This was written to be responsive, so if it is not to your liking you can modify the sleep timer in internet-monitor.c before compiling.
 ## Features
 
 - **Efficient Connectivity Monitoring:** Checks internet access by pinging google.com every 5 seconds.
 - **User-Friendly Notifications:** Generates desktop notifications within GNOME or KDE environments upon detecting connectivity issues.
-- **Customizable Frequency:** Allows easy adjustment of the ping interval to accommodate user needs.
-- **Optimized Performance:** Rewritten in C to ensure minimal resource usage, ideal for systems where efficiency is paramount.
-- **Broad Compatibility:** Tested and confirmed operational on Arch Linux with GNOME 45, with potential for wide Linux distribution support.
+- **Optimized Performance:** Program is very small to ensure minimal resource usage, ideal for systems where efficiency is paramount.
+- **Broad Compatibility:** Tested and confirmed operational on Arch Linux with GNOME 45, very simple C code = wide Linux support.
 
 ## Getting Started
 
