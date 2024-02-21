@@ -1,12 +1,12 @@
 # Freedesktop Internet Monitor
 
-The Freedesktop Internet Monitor is a simple and efficient systemd service written in C, designed to monitor internet connectivity. It pings google.com at 5-second intervals, and after 3 failed attempts it alerts users of any connectivity issues with a desktop notification. Originally conceived in Python by ChatGPT 3.5 this tool has been refined and rewritten in C by ChatGPT 4 to minimize resource consumption. It uses under 1.4MB of memory running on my computer. This was written to be responsive, so if it is not to your liking you can modify the sleep timer in internet-monitor.c before compiling.
+The Freedesktop Internet Monitor is a simple and efficient systemd service written in C, designed to monitor internet connectivity. It pings google.com at 5-second intervals, and after 3 failed attempts it alerts users of any connectivity issues with a desktop notification. Originally conceived in Python by ChatGPT 3.5 this tool has been refined and rewritten in C by ChatGPT 4 to minimize resource consumption. It uses under 1.4MB of memory and practically no CPU running on my computer. This was written to be responsive, so if it is not to your liking you can modify the sleep timer in internet-monitor.c before compiling.
 ## Features
 
-- **Efficient Connectivity Monitoring:** Checks internet access by pinging google.com every 5 seconds.
-- **User-Friendly Notifications:** Generates desktop notifications within GNOME or KDE environments upon detecting connectivity issues.
-- **Optimized Performance:** Program is very small to ensure minimal resource usage, ideal for systems where efficiency is paramount.
-- **Broad Compatibility:** Tested and confirmed operational on Arch Linux with GNOME 45, very simple C code = wide Linux support.
+- **Efficient Connectivity Monitoring:** Checks internet access by pinging google.com every 5 seconds. Notifies after 3 failed attempts (15 seconds of no internet connectivity).
+- **Freedesktop Compatible:** Generates desktop notifications within GNOME or KDE environments upon detecting connectivity issues.
+- **Optimized Performance:** Program is very lightweight to ensure minimal resource usage, ideal for any system.
+- **Broad Compatibility:** Tested and confirmed operational on Arch Linux with GNOME 45. Very simple C code = wide Linux support.
 
 ## Getting Started
 
